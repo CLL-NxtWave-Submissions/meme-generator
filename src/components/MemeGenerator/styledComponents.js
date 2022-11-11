@@ -87,7 +87,6 @@ export const MemeConfigurationInputLabel = styled.label`
 `
 
 export const MemeConfigurationInput = styled.input`
-  type="text";
   outline: none;
   border: 0.1rem solid #d7dfe9;
   border-radius: 0.4rem;
