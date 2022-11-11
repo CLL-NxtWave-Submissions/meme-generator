@@ -57,9 +57,8 @@ export default class MemeGenerator extends Component {
     const inputElementId = inputElementReference.id
     const updatedUserInput = inputElementReference.value
 
-    const updatedStateObject = {isMemeGenerated: false}
+    const updatedStateObject = {}
     updatedStateObject[inputElementId] = updatedUserInput
-
     this.setState(updatedStateObject)
   }
 
