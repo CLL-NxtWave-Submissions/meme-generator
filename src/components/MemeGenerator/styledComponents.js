@@ -10,6 +10,14 @@ export const MemeGeneratorBgContainer = styled.div`
   margin: 0;
   height: 100%;
   min-height: 100vh;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 1.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    padding: 2.5rem 5rem;
+  }
 `
 
 export const MemeHeader = styled.h1`
@@ -17,11 +25,12 @@ export const MemeHeader = styled.h1`
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  align-self: flex-start;
 `
 export const MemeGeneratorContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -48,9 +57,14 @@ export const GeneratedMemeContainer = styled.div`
   min-height: 100%;
 
   @media (min-width: 768px) {
-    width: 40%;
-    min-width: 40%;
+    width: 50%;
+    min-width: 50%;
     order: 1;
+  }
+
+  @media (min-width: 1000px) {
+    width: 48%;
+    min-width: 48%;
   }
 `
 
@@ -66,25 +80,24 @@ export const GeneratedMemeText = styled.p`
 export const MemeConfigurationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   min-width: 100%;
   margin: 0;
   padding: 0;
 
   @media (min-width: 768px) {
-    width: 40%;
-    min-width: 40%;
+    width: 45%;
+    min-width: 45%;
   }
 `
 export const MemeConfigurationInputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin: 1rem 0;
   padding: 0;
   width: 100%;
-  color: #d7dfe9;
+  color: #7e858e;
   font-size: 1rem;
 `
 
@@ -98,6 +111,7 @@ export const MemeConfigurationInput = styled.input`
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   width: 100%;
+  color: #7e858e;
 `
 
 export const MemeGenerateButton = styled.button`
