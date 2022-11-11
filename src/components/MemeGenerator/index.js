@@ -80,7 +80,10 @@ export default class MemeGenerator extends Component {
       <MemeGeneratorBgContainer>
         <MemeHeader>Meme Generator</MemeHeader>
         <MemeGeneratorContainer>
-          <GeneratedMemeContainer bgImageUrl={isMemeGenerated ? imageUrl : ''}>
+          <GeneratedMemeContainer
+            data-testid="meme"
+            bgImageUrl={isMemeGenerated ? imageUrl : ''}
+          >
             <GeneratedMemeText fontSize={fontSizeOptionId}>
               {isMemeGenerated && topText}
             </GeneratedMemeText>

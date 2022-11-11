@@ -88,7 +88,7 @@ export const GeneratedMemeText = styled.p`
   padding: 1rem;
 `
 
-export const MemeConfigurationContainer = styled.div`
+export const MemeConfigurationContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
