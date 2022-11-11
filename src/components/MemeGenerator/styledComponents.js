@@ -30,9 +30,13 @@ export const MemeGeneratorContainer = styled.div`
 
 export const GeneratedMemeContainer = styled.div`
   margin: 0;
-  width: 100%;
-  background-image: url(${props => props.src});
-  background-size: cover;
+  width: 90vw;
+  min-width: 90vw;
+  ${props =>
+    props.bgImageUrl === ''
+      ? `background: inherit;`
+      : `background-image: url(${props.bgImageUrl});
+  background-size: cover;`}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,8 +44,8 @@ export const GeneratedMemeContainer = styled.div`
   height: 100%;
 
   @media (min-width: 768px) {
-    width: 40%;
-    min-width: 40%;
+    width: 40vw;
+    min-width: 40w;
     order: 1;
   }
 `
