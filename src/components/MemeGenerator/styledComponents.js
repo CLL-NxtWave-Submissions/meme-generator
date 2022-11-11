@@ -8,6 +8,8 @@ export const MemeGeneratorBgContainer = styled.div`
   padding: 1.5rem;
   font-family: 'Roboto';
   margin: 0;
+  height: 100%;
+  min-height: 100vh;
 `
 
 export const MemeHeader = styled.h1`
@@ -19,9 +21,10 @@ export const MemeHeader = styled.h1`
 export const MemeGeneratorContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0;
   width: 100%;
+  height: 100%;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -30,8 +33,9 @@ export const MemeGeneratorContainer = styled.div`
 
 export const GeneratedMemeContainer = styled.div`
   margin: 0;
-  width: 90vw;
-  min-width: 90vw;
+  width: 100%;
+  min-width: 100%;
+
   ${props =>
     props.bgImageUrl === ''
       ? `background: inherit;`
@@ -41,18 +45,18 @@ export const GeneratedMemeContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  min-height: 100%;
 
   @media (min-width: 768px) {
-    width: 40vw;
-    min-width: 40w;
+    width: 40%;
+    min-width: 40%;
     order: 1;
   }
 `
 
 export const GeneratedMemeText = styled.p`
   color: #ffffff;
-  font-size: ${props => props.fontSize};
+  font-size: ${props => `${props.fontSize}px`};
   font-weight: 550;
   text-align: center;
   line-height: 1.5rem;
@@ -64,11 +68,13 @@ export const MemeConfigurationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-width: 100%;
   margin: 0;
   padding: 0;
 
   @media (min-width: 768px) {
     width: 40%;
+    min-width: 40%;
   }
 `
 export const MemeConfigurationInputContainer = styled.div`
@@ -91,6 +97,7 @@ export const MemeConfigurationInput = styled.input`
   border: 0.1rem solid #d7dfe9;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
+  width: 100%;
 `
 
 export const MemeGenerateButton = styled.button`
@@ -100,4 +107,5 @@ export const MemeGenerateButton = styled.button`
   color: #ffffff;
   border-radius: 0.4rem;
   padding: 1rem 2.5rem;
+  cursor: pointer;
 `
