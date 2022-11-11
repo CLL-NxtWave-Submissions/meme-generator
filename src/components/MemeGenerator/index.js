@@ -1,5 +1,16 @@
 import {Component} from 'react'
-import styledComponents from './styledComponents'
+import {
+  MemeGeneratorBgContainer,
+  MemeHeader,
+  MemeGeneratorContainer,
+  GeneratedMemeContainer,
+  GeneratedMemeText,
+  MemeConfigurationContainer,
+  MemeConfigurationInputContainer,
+  MemeConfigurationInputLabel,
+  MemeConfigurationInput,
+  MemeGenerateButton,
+} from './styledComponents'
 
 const fontSizesOptionsList = [
   {
@@ -67,67 +78,63 @@ export default class MemeGenerator extends Component {
     } = this.state
 
     return (
-      <styledComponents.MemeGeneratorBgContainer>
-        <styledComponents.MemeHeader>
-          Meme Generator
-        </styledComponents.MemeHeader>
-        <styledComponents.MemeGeneratorContainer>
-          <styledComponents.GeneratedMemeContainer
-            bgImageUrl={isMemeGenerated ? imageUrl : ''}
-          >
-            <styledComponents.GeneratedMemeText fontSize={fontSizeOptionId}>
+      <MemeGeneratorBgContainer>
+        <MemeHeader>Meme Generator</MemeHeader>
+        <MemeGeneratorContainer>
+          <GeneratedMemeContainer bgImageUrl={isMemeGenerated ? imageUrl : ''}>
+            <GeneratedMemeText fontSize={fontSizeOptionId}>
               {isMemeGenerated && topText}
-            </styledComponents.GeneratedMemeText>
-            <styledComponents.GeneratedMemeText fontSize={fontSizeOptionId}>
+            </GeneratedMemeText>
+            <GeneratedMemeText fontSize={fontSizeOptionId}>
               {isMemeGenerated && bottomText}
-            </styledComponents.GeneratedMemeText>
-          </styledComponents.GeneratedMemeContainer>
+            </GeneratedMemeText>
+          </GeneratedMemeContainer>
 
-          <styledComponents.MemeConfigurationContainer>
-            <styledComponents.MemeConfigurationInputContainer>
-              <styledComponents.MemeConfigurationInputLabel forHTML="imageUrl">
+          <MemeConfigurationContainer>
+            <MemeConfigurationInputContainer>
+              <MemeConfigurationInputLabel forHTML="imageUrl">
                 Image URL
-              </styledComponents.MemeConfigurationInputLabel>
-              <styledComponents.MemeConfigurationInput
+              </MemeConfigurationInputLabel>
+              <MemeConfigurationInput
                 id="imageUrl"
                 type="url"
                 placeholder="Enter the image URL"
                 value={imageUrl}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
-            </styledComponents.MemeConfigurationInputContainer>
+            </MemeConfigurationInputContainer>
 
-            <styledComponents.MemeConfigurationInputContainer>
-              <styledComponents.MemeConfigurationInputLabel forHTML="topText">
+            <MemeConfigurationInputContainer>
+              <MemeConfigurationInputLabel forHTML="topText">
                 Top Text
-              </styledComponents.MemeConfigurationInputLabel>
-              <styledComponents.MemeConfigurationInput
+              </MemeConfigurationInputLabel>
+              <MemeConfigurationInput
                 id="topText"
                 type="text"
                 placeholder="Enter the Top Text"
                 value={topText}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
-            </styledComponents.MemeConfigurationInputContainer>
+            </MemeConfigurationInputContainer>
 
-            <styledComponents.MemeConfigurationInputContainer>
-              <styledComponents.MemeConfigurationInputLabel forHTML="bottomText">
+            <MemeConfigurationInputContainer>
+              <MemeConfigurationInputLabel forHTML="bottomText">
                 Bottom Text
-              </styledComponents.MemeConfigurationInputLabel>
-              <styledComponents.MemeConfigurationInput
+              </MemeConfigurationInputLabel>
+              <MemeConfigurationInput
                 id="bottomText"
                 type="text"
                 placeholder="Enter the Bottom Text"
                 value={bottomText}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
-            </styledComponents.MemeConfigurationInputContainer>
+            </MemeConfigurationInputContainer>
 
-            <styledComponents.MemeConfigurationInputContainer>
-              <styledComponents.MemeConfigurationInputLabel forHTML="fontSizeOptionId">
+            <MemeConfigurationInputContainer>
+              <MemeConfigurationInputLabel forHTML="fontSizeOptionId">
                 Font Size
-              </styledComponents.MemeConfigurationInputLabel>
-              <styledComponents.MemeConfigurationInput
+              </MemeConfigurationInputLabel>
+              <MemeConfigurationInput
                 id="fontSizeOptionId"
                 as="select"
                 value={fontSizeOptionId}
@@ -138,18 +145,15 @@ export default class MemeGenerator extends Component {
                     {fontSizesOption.displayText}
                   </option>
                 ))}
-              </styledComponents.MemeConfigurationInput>
-            </styledComponents.MemeConfigurationInputContainer>
+              </MemeConfigurationInput>
+            </MemeConfigurationInputContainer>
 
-            <styledComponents.MemeGenerateButton
-              type="button"
-              onClick={this.onGenerateMeme}
-            >
+            <MemeGenerateButton type="button" onClick={this.onGenerateMeme}>
               Generate
-            </styledComponents.MemeGenerateButton>
-          </styledComponents.MemeConfigurationContainer>
-        </styledComponents.MemeGeneratorContainer>
-      </styledComponents.MemeGeneratorBgContainer>
+            </MemeGenerateButton>
+          </MemeConfigurationContainer>
+        </MemeGeneratorContainer>
+      </MemeGeneratorBgContainer>
     )
   }
 }
