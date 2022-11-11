@@ -44,12 +44,8 @@ export const GeneratedMemeContainer = styled.div`
   margin: 0;
   width: 100%;
   min-width: 100%;
-
-  ${props =>
-    props.bgImageUrl === ''
-      ? `background: inherit;`
-      : `background-image: url(${props.bgImageUrl});
-  background-size: cover;`}
+  background-image: url(${props => props.bgImageUrl});
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
