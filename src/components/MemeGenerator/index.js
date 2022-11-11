@@ -121,16 +121,21 @@ export default class MemeGenerator extends Component {
             </styledComponents.MemeConfigurationInputContainer>
 
             <styledComponents.MemeConfigurationInputContainer>
-              <styledComponents.MemeConfigurationInputLabel forHTML="imageUrl">
-                Image URL
+              <styledComponents.MemeConfigurationInputLabel forHTML="fontSizeOptionId">
+                Font Size
               </styledComponents.MemeConfigurationInputLabel>
               <styledComponents.MemeConfigurationInput
-                id="imageUrl"
-                type="url"
-                placeholder="Enter the image URL"
-                value={imageUrl}
+                id="fontSizeOptionId"
+                as="select"
+                value={fontSizeOptionId}
                 onChange={this.onMemeConfigurationInputUpdate}
-              />
+              >
+                {fontSizesOptionsList.map(fontSizesOption => (
+                  <option value={fontSizesOption.optionId}>
+                    {fontSizesOption.displayText}
+                  </option>
+                ))}
+              </styledComponents.MemeConfigurationInput>
             </styledComponents.MemeConfigurationInputContainer>
 
             <styledComponents.MemeGenerateButton
