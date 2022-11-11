@@ -1,4 +1,4 @@
-import {Component} from 'React'
+import {Component} from 'react'
 import styledComponents from './styledComponents'
 
 const fontSizesOptionsList = [
