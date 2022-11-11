@@ -62,10 +62,13 @@ export default class MemeGenerator extends Component {
     this.setState(updatedStateObject)
   }
 
-  onGenerateMeme = () =>
+  onGenerateMeme = generateMemeClickEvent => {
+    generateMemeClickEvent.preventDefault()
+
     this.setState({
       isMemeGenerated: true,
     })
+  }
 
   render() {
     const {
@@ -153,7 +156,7 @@ export default class MemeGenerator extends Component {
               </MemeConfigurationInput>
             </MemeConfigurationInputContainer>
 
-            <MemeGenerateButton type="button" onClick={this.onGenerateMeme}>
+            <MemeGenerateButton type="submit" onClick={this.onGenerateMeme}>
               Generate
             </MemeGenerateButton>
           </MemeConfigurationContainer>
