@@ -38,6 +38,7 @@ export default class MemeGenerator extends Component {
     topText: '',
     bottomText: '',
     fontSizeOptionId: fontSizesOptionsList[0].optionId,
+    isMemeGenerated: false,
   }
 
   onMemeConfigurationInputUpdate = inputUpdateEvent => {
@@ -45,7 +46,7 @@ export default class MemeGenerator extends Component {
     const inputElementId = inputElementReference.id
     const updatedUserInput = inputElementReference.value
 
-    const updatedStateObject = {}
+    const updatedStateObject = {isMemeGenerated: false}
     updatedStateObject[inputElementId] = updatedUserInput
 
     this.setState(updatedStateObject)
@@ -71,12 +72,14 @@ export default class MemeGenerator extends Component {
           Meme Generator
         </styledComponents.MemeHeader>
         <styledComponents.MemeGeneratorContainer>
-          <styledComponents.GeneratedMemeContainer bgImageUrl={imageUrl}>
+          <styledComponents.GeneratedMemeContainer
+            bgImageUrl={isMemeGenerated ? imageUrl : ''}
+          >
             <styledComponents.GeneratedMemeText fontSize={fontSizeOptionId}>
-              {topText}
+              {isMemeGenerated && topText}
             </styledComponents.GeneratedMemeText>
             <styledComponents.GeneratedMemeText fontSize={fontSizeOptionId}>
-              {bottomText}
+              {isMemeGenerated && bottomText}
             </styledComponents.GeneratedMemeText>
           </styledComponents.GeneratedMemeContainer>
 
