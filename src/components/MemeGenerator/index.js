@@ -49,7 +49,6 @@ export default class MemeGenerator extends Component {
     topText: '',
     bottomText: '',
     fontSizeOptionId: fontSizesOptionsList[0].optionId,
-    isMemeGenerated: false,
   }
 
   onMemeConfigurationInputUpdate = inputUpdateEvent => {
@@ -65,33 +64,27 @@ export default class MemeGenerator extends Component {
   onGenerateMeme = generateMemeClickEvent => {
     generateMemeClickEvent.preventDefault()
 
-    this.setState({
-      isMemeGenerated: true,
-    })
+    this.setState(prevMemeConfigDataState => ({
+      imageUrl: prevMemeConfigDataState.imageUrl,
+      topText: prevMemeConfigDataState.topText,
+      bottomText: prevMemeConfigDataState.bottomText,
+      fontSizeOptionId: prevMemeConfigDataState.fontSizeOptionId,
+    }))
   }
 
   render() {
-    const {
-      imageUrl,
-      topText,
-      bottomText,
-      fontSizeOptionId,
-      isMemeGenerated,
-    } = this.state
+    const {imageUrl, topText, bottomText, fontSizeOptionId} = this.state
 
     return (
       <MemeGeneratorBgContainer>
         <MemeHeader>Meme Generator</MemeHeader>
         <MemeGeneratorContainer>
-          <GeneratedMemeContainer
-            data-testid="meme"
-            bgImageUrl={isMemeGenerated ? imageUrl : ''}
-          >
+          <GeneratedMemeContainer data-testid="meme" bgImageUrl={imageUrl}>
             <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {isMemeGenerated && topText}
+              {topText}
             </GeneratedMemeText>
             <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {isMemeGenerated && bottomText}
+              {bottomText}
             </GeneratedMemeText>
           </GeneratedMemeContainer>
 
