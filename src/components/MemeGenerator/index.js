@@ -78,82 +78,82 @@ export default class MemeGenerator extends Component {
     return (
       <MemeGeneratorBgContainer>
         <MemeHeader>Meme Generator</MemeHeader>
-        <MemeGeneratorContainer>
-          <GeneratedMemeContainer data-testid="meme" bgImageUrl={imageUrl}>
-            <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {topText}
-            </GeneratedMemeText>
-            <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {bottomText}
-            </GeneratedMemeText>
-          </GeneratedMemeContainer>
+        {/* <MemeGeneratorContainer> */}
+        <GeneratedMemeContainer data-testid="meme" bgImageUrl={imageUrl}>
+          <GeneratedMemeText fontSize={fontSizeOptionId}>
+            {topText}
+          </GeneratedMemeText>
+          <GeneratedMemeText fontSize={fontSizeOptionId}>
+            {bottomText}
+          </GeneratedMemeText>
+        </GeneratedMemeContainer>
 
-          <MemeConfigurationContainer>
-            <MemeConfigurationInputContainer>
-              <MemeConfigurationInputLabel forHTML="imageUrl">
-                Image URL
-              </MemeConfigurationInputLabel>
-              <MemeConfigurationInput
-                id="imageUrl"
-                type="url"
-                placeholder="Enter the image URL"
-                value={imageUrl}
-                onChange={this.onMemeConfigurationInputUpdate}
-              />
-            </MemeConfigurationInputContainer>
+        <MemeConfigurationContainer>
+          <MemeConfigurationInputContainer>
+            <MemeConfigurationInputLabel forHTML="imageUrl">
+              Image URL
+            </MemeConfigurationInputLabel>
+            <MemeConfigurationInput
+              id="imageUrl"
+              type="url"
+              placeholder="Enter the image URL"
+              value={imageUrl}
+              onChange={this.onMemeConfigurationInputUpdate}
+            />
+          </MemeConfigurationInputContainer>
 
-            <MemeConfigurationInputContainer>
-              <MemeConfigurationInputLabel forHTML="topText">
-                Top Text
-              </MemeConfigurationInputLabel>
-              <MemeConfigurationInput
-                id="topText"
-                type="text"
-                placeholder="Enter the Top Text"
-                value={topText}
-                onChange={this.onMemeConfigurationInputUpdate}
-              />
-            </MemeConfigurationInputContainer>
+          <MemeConfigurationInputContainer>
+            <MemeConfigurationInputLabel forHTML="topText">
+              Top Text
+            </MemeConfigurationInputLabel>
+            <MemeConfigurationInput
+              id="topText"
+              type="text"
+              placeholder="Enter the Top Text"
+              value={topText}
+              onChange={this.onMemeConfigurationInputUpdate}
+            />
+          </MemeConfigurationInputContainer>
 
-            <MemeConfigurationInputContainer>
-              <MemeConfigurationInputLabel forHTML="bottomText">
-                Bottom Text
-              </MemeConfigurationInputLabel>
-              <MemeConfigurationInput
-                id="bottomText"
-                type="text"
-                placeholder="Enter the Bottom Text"
-                value={bottomText}
-                onChange={this.onMemeConfigurationInputUpdate}
-              />
-            </MemeConfigurationInputContainer>
+          <MemeConfigurationInputContainer>
+            <MemeConfigurationInputLabel forHTML="bottomText">
+              Bottom Text
+            </MemeConfigurationInputLabel>
+            <MemeConfigurationInput
+              id="bottomText"
+              type="text"
+              placeholder="Enter the Bottom Text"
+              value={bottomText}
+              onChange={this.onMemeConfigurationInputUpdate}
+            />
+          </MemeConfigurationInputContainer>
 
-            <MemeConfigurationInputContainer>
-              <MemeConfigurationInputLabel forHTML="fontSizeOptionId">
-                Font Size
-              </MemeConfigurationInputLabel>
-              <MemeConfigurationInput
-                id="fontSizeOptionId"
-                as="select"
-                value={fontSizeOptionId}
-                onChange={this.onMemeConfigurationInputUpdate}
-              >
-                {fontSizesOptionsList.map(fontSizesOption => (
-                  <option
-                    key={fontSizesOption.optionId}
-                    value={fontSizesOption.optionId}
-                  >
-                    {fontSizesOption.displayText}
-                  </option>
-                ))}
-              </MemeConfigurationInput>
-            </MemeConfigurationInputContainer>
+          <MemeConfigurationInputContainer>
+            <MemeConfigurationInputLabel forHTML="fontSizeOptionId">
+              Font Size
+            </MemeConfigurationInputLabel>
+            <MemeConfigurationInput
+              id="fontSizeOptionId"
+              as="select"
+              value={fontSizeOptionId}
+              onChange={this.onMemeConfigurationInputUpdate}
+            >
+              {fontSizesOptionsList.map(fontSizesOption => (
+                <option
+                  key={fontSizesOption.optionId}
+                  value={fontSizesOption.optionId}
+                >
+                  {fontSizesOption.displayText}
+                </option>
+              ))}
+            </MemeConfigurationInput>
+          </MemeConfigurationInputContainer>
 
-            <MemeGenerateButton type="submit" onClick={this.onGenerateMeme}>
-              Generate
-            </MemeGenerateButton>
-          </MemeConfigurationContainer>
-        </MemeGeneratorContainer>
+          <MemeGenerateButton type="submit" onClick={this.onGenerateMeme}>
+            Generate
+          </MemeGenerateButton>
+        </MemeConfigurationContainer>
+        {/* </MemeGeneratorContainer> */}
       </MemeGeneratorBgContainer>
     )
   }
