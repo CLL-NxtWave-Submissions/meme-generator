@@ -54,7 +54,18 @@ export const GeneratedMemeContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100%;
+  min-height: 50vh;
+  height: 50vh;
+
+  @media (min-width: 600px) {
+    min-height: 60vh;
+    height: 60vh;
+  }
+
+  @media (min-width: 720px) {
+    min-height: 65vh;
+    height: 65vh;
+  }
 
   @media (min-width: 768px) {
     width: 50%;
