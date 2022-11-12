@@ -45,12 +45,12 @@ const fontSizesOptionsList = [
 
 export default class MemeGenerator extends Component {
   state = {
-    imageUrl: {oldValue: '', newNalue: ''},
-    topText: {oldValue: '', newNalue: ''},
-    bottomText: {oldValue: '', newNalue: ''},
+    imageUrl: {oldValue: '', newValue: ''},
+    topText: {oldValue: '', newValue: ''},
+    bottomText: {oldValue: '', newValue: ''},
     fontSizeOptionId: {
       oldValue: fontSizesOptionsList[0].optionId,
-      newNalue: fontSizesOptionsList[0].optionId,
+      newValue: fontSizesOptionsList[0].optionId,
     },
     isMemeGenerated: false,
   }
@@ -115,12 +115,15 @@ export default class MemeGenerator extends Component {
       <MemeGeneratorBgContainer>
         <MemeHeader>Meme Generator</MemeHeader>
         <MemeGeneratorContainer>
-          <GeneratedMemeContainer data-testid="meme" bgImageUrl={imageUrl}>
-            <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {topText}
+          <GeneratedMemeContainer
+            data-testid="meme"
+            bgImageUrl={imageUrl.oldValue}
+          >
+            <GeneratedMemeText fontSize={fontSizeOptionId.oldValue}>
+              {topText.oldValue}
             </GeneratedMemeText>
-            <GeneratedMemeText fontSize={fontSizeOptionId}>
-              {bottomText}
+            <GeneratedMemeText fontSize={fontSizeOptionId.oldValue}>
+              {bottomText.oldValue}
             </GeneratedMemeText>
           </GeneratedMemeContainer>
 
@@ -133,7 +136,7 @@ export default class MemeGenerator extends Component {
                 id="imageUrl"
                 type="url"
                 placeholder="Enter the image URL"
-                value={imageUrl}
+                value={imageUrl.newValue}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
             </MemeConfigurationInputContainer>
@@ -146,7 +149,7 @@ export default class MemeGenerator extends Component {
                 id="topText"
                 type="text"
                 placeholder="Enter the Top Text"
-                value={topText}
+                value={topText.newValue}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
             </MemeConfigurationInputContainer>
@@ -159,7 +162,7 @@ export default class MemeGenerator extends Component {
                 id="bottomText"
                 type="text"
                 placeholder="Enter the Bottom Text"
-                value={bottomText}
+                value={bottomText.newValue}
                 onChange={this.onMemeConfigurationInputUpdate}
               />
             </MemeConfigurationInputContainer>
@@ -171,7 +174,7 @@ export default class MemeGenerator extends Component {
               <MemeConfigurationInput
                 id="fontSizeOptionId"
                 as="select"
-                value={fontSizeOptionId}
+                value={fontSizeOptionId.newValue}
                 onChange={this.onMemeConfigurationInputUpdate}
               >
                 {fontSizesOptionsList.map(fontSizesOption => (
