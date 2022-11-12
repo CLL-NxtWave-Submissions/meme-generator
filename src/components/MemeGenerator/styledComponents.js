@@ -80,7 +80,7 @@ export const GeneratedMemeText = styled.p`
   font-size: ${props => `${props.fontSize}px`};
   font-weight: 550;
   text-align: center;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   padding: 1rem;
 `
 
