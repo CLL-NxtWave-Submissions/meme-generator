@@ -67,6 +67,7 @@ export default class MemeGenerator extends Component {
         oldValue: currentMemePropertyData.oldValue,
         newValue: updatedUserInput,
       }
+      updatedStateObject.isMemeGenerated = false
 
       return updatedStateObject
     })
