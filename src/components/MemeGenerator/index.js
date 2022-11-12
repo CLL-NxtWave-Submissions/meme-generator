@@ -127,7 +127,7 @@ export default class MemeGenerator extends Component {
             </GeneratedMemeText>
           </GeneratedMemeContainer>
 
-          <MemeConfigurationContainer>
+          <MemeConfigurationContainer onSubmit={this.onGenerateMeme}>
             <MemeConfigurationInputContainer>
               <MemeConfigurationInputLabel htmlFor="imageUrl">
                 Image URL
@@ -188,9 +188,7 @@ export default class MemeGenerator extends Component {
               </MemeConfigurationInput>
             </MemeConfigurationInputContainer>
 
-            <MemeGenerateButton type="submit" onClick={this.onGenerateMeme}>
-              Generate
-            </MemeGenerateButton>
+            <MemeGenerateButton type="submit">Generate</MemeGenerateButton>
           </MemeConfigurationContainer>
         </MemeGeneratorContainer>
       </MemeGeneratorBgContainer>
