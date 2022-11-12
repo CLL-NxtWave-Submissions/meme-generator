@@ -45,10 +45,14 @@ const fontSizesOptionsList = [
 
 export default class MemeGenerator extends Component {
   state = {
-    imageUrl: '',
-    topText: '',
-    bottomText: '',
-    fontSizeOptionId: fontSizesOptionsList[0].optionId,
+    imageUrl: {oldValue: '', newNalue: ''},
+    topText: {oldValue: '', newNalue: ''},
+    bottomText: {oldValue: '', newNalue: ''},
+    fontSizeOptionId: {
+      oldValue: fontSizesOptionsList[0].optionId,
+      newNalue: fontSizesOptionsList[0].optionId,
+    },
+    isMemeGenerated: false,
   }
 
   onMemeConfigurationInputUpdate = inputUpdateEvent => {
