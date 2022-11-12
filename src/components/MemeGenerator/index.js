@@ -76,12 +76,36 @@ export default class MemeGenerator extends Component {
   onGenerateMeme = generateMemeClickEvent => {
     generateMemeClickEvent.preventDefault()
 
-    this.setState(prevMemeConfigDataState => ({
-      imageUrl: prevMemeConfigDataState.imageUrl,
-      topText: prevMemeConfigDataState.topText,
-      bottomText: prevMemeConfigDataState.bottomText,
-      fontSizeOptionId: prevMemeConfigDataState.fontSizeOptionId,
-    }))
+    this.setState(prevMemeConfigDataState => {
+      let updatedMemeConfigDataState = {}
+
+      const updatedStateObjEntriesArr = Object.entries(
+        prevMemeConfigDataState,
+      ).map(prevMemeConfigDataStateKVPairArr => {
+        const [
+          prevStateObjKey,
+          prevStateObjValue,
+        ] = prevMemeConfigDataStateKVPairArr
+
+        let updatedStateObjEntry = []
+        if (prevStateObjKey !== 'isMemeGenerated') {
+          updatedStateObjEntry = [
+            prevStateObjKey,
+            {
+              oldValue: prevStateObjValue.newValue,
+              newValue: prevStateObjValue.newValue,
+            },
+          ]
+        } else {
+          updatedStateObjEntry = [prevStateObjKey, true]
+        }
+
+        return updatedStateObjEntry
+      })
+
+      updatedMemeConfigDataState = Object.fromEntries(updatedStateObjEntriesArr)
+      return updatedMemeConfigDataState
+    })
   }
 
   render() {
